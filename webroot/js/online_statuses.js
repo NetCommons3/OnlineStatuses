@@ -1,11 +1,11 @@
 /**
  * @fileoverview OnlineStatuses Javascript
- * @author Noriko Arai <arai@nii.ac.jp>
- * @author Mitsuru Mutaguchi <mutaguchi@opensource-workshop.jp>
+ * @author arai@nii.ac.jp (Noriko Arai)
+ * @author mutaguchi@opensource-workshop.jp (Mitsuru Mutaguchi)
  * @link http://www.netcommons.org NetCommons Project
  * @license http://www.netcommons.org/license.txt NetCommons License
- * @copyright Copyright 2014, NetCommons Project
  */
+
 
 /**
  * OnlineStatuses Javascript
@@ -18,10 +18,16 @@ NetCommonsApp.controller('OnlineStatuses',
 
       $scope.frameId = 0;
       $scope.visibleManage = false;
+
+      /**
+       * OnlineStatuses plugin view url
+       *
+       * @const
+       */
       $scope.PLUGIN_MANAGE_URL = '/online_statuses/online_statuses/manage/';
 
       /**
-       * OnlineStatuses edit url
+       * OnlineStatuses plugin edit url
        *
        * @const
        */
