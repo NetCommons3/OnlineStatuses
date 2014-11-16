@@ -23,6 +23,7 @@ OnlineStatuses for NetCommons3
 - [x] プラグイン追加手順の実施（githubにプラグインリポジトリ作成、各種サービスの登録）
 - [x] phpmd, phpcs, phpdoc, gjslint対応
 - [x] githubにpush
+- [ ] 多言語対応
 - [ ] phpUnit実装、テスト
 
 ## 課題管理
