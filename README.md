@@ -18,11 +18,11 @@ OnlineStatuses for NetCommons3
 
 - [x] vagrant環境構築
 - [x] cakephp実装
-- [x] cakephp セキュリティコンポーネント
+- [x] cakephp セキュリティコンポーネント実装
 - [x] angraljs実装
 - [x] プラグイン追加手順の実施（githubにプラグインリポジトリ作成、各種サービスの登録）
-- [x] phpmd, phpcs, phpdoc, gjslint
-- [x] githubにソースをpush
+- [x] phpmd, phpcs, phpdoc, gjslint対応
+- [x] githubにpush
 - [ ] phpUnit実装、テスト
 
 ## 課題管理
