@@ -9,3 +9,11 @@ OnlineStatuses for NetCommons3
 | dependencies | status |
 | ------------ | ------ |
 | composer.json | [![Dependency Status](https://www.versioneye.com/user/projects/5465cd3a4de5ef4825000053 /badge.png)](https://www.versioneye.com/user/projects/5465cd3a4de5ef4825000053) |
+
+## 日本語名
+
+オンライン状況
+
+## 課題管理
+
+[issue](https://github.com/NetCommons3/OnlineStatuses/issues)に記述
