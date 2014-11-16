@@ -8,61 +8,56 @@
  */
 App::uses('AppModel', 'Model');
 
+/**
+ * OnlineFrameSetting Model
+ *
+ * @author Mitsuru Mutaguchi <mutaguchi@opensource-workshop.jp>
+ * @package NetCommons\OnlineStatuses\Model
+ */
 class OnlineFrameSetting extends AppModel {
 
-	/**
-	 * Validation rules
-	 *
-	 * @var array
-	 */
-//	public $validate = array(
-//	);
+/**
+ * Validation rules
+ *
+ * @var array
+ */
+	public $validate = array(
+	);
 
-	/**
-	 * get OnlineFrameSetting
-	 *
-	 * @param int $blockId blocks.id
-	 * @param bool $contentEditable true can edit the content, false not can edit the content.
-	 * @return array
-	 */
-//	public function getOnlineFrameSettings($blockId, $contentEditable) {
+/**
+ * get OnlineFrameSetting
+ *
+ * @return array
+ */
 	public function getOnlineFrameSetting() {
-
-		/*
-				$conditions = array(
-					'block_id' => $blockId,
-				);
-				if (! $contentEditable) {
-					$conditions['status'] = NetCommonsBlockComponent::STATUS_PUBLISHED;
-				}
-		*/
 		$conditions = array(
 		);
 
-		$online_frame_setting = $this->find('first', array(
+		$onlineFrameSetting = $this->find('first', array(
 				'conditions' => $conditions,
 			)
 		);
 
-		if (! $online_frame_setting) {
-			$online_frame_setting = $this->create();
-			$online_frame_setting['OnlineFrameSetting']['display_visitor'] = '0';
-			$online_frame_setting['OnlineFrameSetting']['display_login_user'] = '0';
-			$online_frame_setting['OnlineFrameSetting']['display_registration_user'] = '0';
-			$online_frame_setting['OnlineFrameSetting']['frame_key'] = '';
-			$online_frame_setting['OnlineFrameSetting']['id'] = '0';
+		if (! $onlineFrameSetting) {
+			$onlineFrameSetting = $this->create();
+			$onlineFrameSetting['OnlineFrameSetting']['display_visitor'] = '0';
+			$onlineFrameSetting['OnlineFrameSetting']['display_login_user'] = '0';
+			$onlineFrameSetting['OnlineFrameSetting']['display_registration_user'] = '0';
+			$onlineFrameSetting['OnlineFrameSetting']['frame_key'] = '';
+			$onlineFrameSetting['OnlineFrameSetting']['id'] = '0';
 		}
-//CakeLog::debug(print_r($online_frame_setting, true));
-		return $online_frame_setting;
+		return $onlineFrameSetting;
 	}
 
-	/**
-	 * save OnlineFrameSetting
-	 *
-	 * @param array $postData received post data
-	 * @return bool true success, false error
-	 * @throws ForbiddenException
-	 */
+/**
+ * save OnlineFrameSetting
+ *
+ * @param array $postData received post data
+ * @return bool true success, false error
+ * @throws ForbiddenException
+ * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+ * @SuppressWarnings(PHPMD.NPathComplexity)
+ */
 	public function saveOnlineFrameSetting($postData) {
 		$models = array(
 			'Frame' => 'Frames.Frame',
@@ -73,12 +68,8 @@ class OnlineFrameSetting extends AppModel {
 			$this->$model->setDataSource('master');
 		}
 
-//CakeLog::debug(print_r($postData, true));
 		//frame関連のセット
 		$frame = $this->Frame->findById($postData['Frame']['id']);
-//$sqlLog = $this->Frame->getDataSource()->getLog(false, false);
-//CakeLog::debug(print_r($sqlLog, true));
-//CakeLog::debug(print_r($frame, true));
 
 		if (! $frame) {
 			return false;
@@ -96,24 +87,21 @@ class OnlineFrameSetting extends AppModel {
 			$blockId = $this->__saveBlock($frame);
 
 			//OnlineFrameSettingsテーブル登録
-			$online_frame_setting['OnlineFrameSetting'] = $postData['OnlineFrameSetting'];
-			$online_frame_setting['OnlineFrameSetting']['block_id'] = $blockId;
-			$online_frame_setting['OnlineFrameSetting']['created_user'] = CakeSession::read('Auth.User.id');
+			$onlineFrameSetting['OnlineFrameSetting'] = $postData['OnlineFrameSetting'];
+			$onlineFrameSetting['OnlineFrameSetting']['block_id'] = $blockId;
+			$onlineFrameSetting['OnlineFrameSetting']['created_user'] = CakeSession::read('Auth.User.id');
 
-			// チェックボックスseve暫定対応
-			$online_frame_setting['OnlineFrameSetting']['display_visitor'] = ($online_frame_setting['OnlineFrameSetting']['display_visitor'] == "false") ? 0 : 1;
-			$online_frame_setting['OnlineFrameSetting']['display_login_user'] = ($online_frame_setting['OnlineFrameSetting']['display_login_user'] == "false") ? 0 : 1;
-			$online_frame_setting['OnlineFrameSetting']['display_registration_user'] = ($online_frame_setting['OnlineFrameSetting']['display_registration_user'] == "false") ? 0 : 1;
+			// チェックボックスseve暫定対応 SuppressWarnings適用箇所
+			$onlineFrameSetting['OnlineFrameSetting']['display_visitor'] = $onlineFrameSetting['OnlineFrameSetting']['display_visitor'] == "false" ? 0 : 1;
+			$onlineFrameSetting['OnlineFrameSetting']['display_login_user'] = $onlineFrameSetting['OnlineFrameSetting']['display_login_user'] == "false" ? 0 : 1;
+			$onlineFrameSetting['OnlineFrameSetting']['display_registration_user'] = $onlineFrameSetting['OnlineFrameSetting']['display_registration_user'] == "false" ? 0 : 1;
 
-	CakeLog::debug(print_r($online_frame_setting, true));
-			$online_frame_setting = $this->save($online_frame_setting);
-//$sqlLog = $this->Frame->getDataSource()->getLog(false, false);
-//CakeLog::debug(print_r($sqlLog, true));
-			if (! $online_frame_setting) {
+			$onlineFrameSetting = $this->save($onlineFrameSetting);
+			if (! $onlineFrameSetting) {
 				throw new ForbiddenException(serialize($this->validationErrors));
 			}
 			$dataSource->commit();
-			return $online_frame_setting;
+			return $onlineFrameSetting;
 
 		} catch (Exception $ex) {
 			CakeLog::error($ex->getTraceAsString());
@@ -122,13 +110,13 @@ class OnlineFrameSetting extends AppModel {
 		}
 	}
 
-	/**
-	 * save block
-	 *
-	 * @param array $frame frame data
-	 * @return int blocks.id
-	 * @throws ForbiddenException
-	 */
+/**
+ * save block
+ *
+ * @param array $frame frame data
+ * @return int blocks.id
+ * @throws ForbiddenException
+ */
 	private function __saveBlock($frame) {
 		if (! isset($frame['Frame']['block_id']) ||
 			$frame['Frame']['block_id'] === '0') {

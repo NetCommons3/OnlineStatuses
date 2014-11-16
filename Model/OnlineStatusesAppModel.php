@@ -8,6 +8,12 @@
  */
 App::uses('AppModel', 'Model');
 
+/**
+ * OnlineStatusesApp Model
+ *
+ * @author Mitsuru Mutaguchi <mutaguchi@opensource-workshop.jp>
+ * @package NetCommons\OnlineStatuses\Model
+ */
 class OnlineStatusesAppModel extends AppModel {
 
 /**
@@ -16,7 +22,7 @@ class OnlineStatusesAppModel extends AppModel {
  * @param bool $id id
  * @param null $table db table
  * @param null $ds connection
- * @return void
+ * @return \OnlineStatusesAppModel
  * @SuppressWarnings(PHPMD)
  */
 	public function __construct($id = false, $table = null, $ds = null) {

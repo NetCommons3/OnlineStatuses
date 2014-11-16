@@ -1,14 +1,24 @@
 <?php
+/**
+ * Schema file
+ *
+ * @author Noriko Arai <arai@nii.ac.jp>
+ * @author Mitsuru Mutaguchi <mutaguchi@opensource-workshop.jp>
+ * @link http://www.netcommons.org NetCommons Project
+ * @license http://www.netcommons.org/license.txt NetCommons License
+ * @copyright Copyright 2014, NetCommons Project
+ */
+
+/**
+ * OnlineStatusesSchema CakeSchema
+ *
+ * @author Mitsuru Mutaguchi <mutaguchi@opensource-workshop.jp>
+ * @package     app.Plugin.OnlineStatuses.Config.Migration
+ * @SuppressWarnings(PHPMD.LongVariable)
+ */
 class AppSchema extends CakeSchema {
 
 	public $connection = 'master';
-
-	public function before($event = array()) {
-		return true;
-	}
-
-	public function after($event = array()) {
-	}
 
 	public $online_frame_settings = array(
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'primary', 'comment' => 'ID |  |  | '),
@@ -26,5 +36,24 @@ class AppSchema extends CakeSchema {
 		),
 		'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_general_ci', 'engine' => 'InnoDB')
 	);
+
+/**
+ * before
+ *
+ * @param array $event savent
+ * @return bool
+ */
+	public function before($event = array()) {
+		return true;
+	}
+
+/**
+ * after
+ *
+ * @param array $event event
+ * @return void
+ */
+	public function after($event = array()) {
+	}
 
 }

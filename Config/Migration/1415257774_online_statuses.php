@@ -36,7 +36,7 @@ class OnlineStatuses extends CakeMigration {
 		),
 		'down' => array(
 			'drop_table' => array(
-				 'online_frame_settings',
+				'online_frame_settings',
 			),
 		),
 	);

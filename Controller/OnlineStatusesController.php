@@ -15,7 +15,6 @@ class OnlineStatusesController extends OnlineStatusesAppController {
  *
  * @var array
  */
-	//public $uses = array();
 	public $uses = array(
 		'OnlineStatuses.OnlineFrameSetting',
 	);
@@ -34,6 +33,7 @@ class OnlineStatusesController extends OnlineStatusesAppController {
  * beforeFilter
  *
  * @return void
+ * @throws ForbiddenException
  **/
 	public function beforeFilter() {
 		parent::beforeFilter();
@@ -53,15 +53,15 @@ class OnlineStatusesController extends OnlineStatusesAppController {
 /**
  * index
  *
+ * @param int $frameId frames.id
  * @return void
  **/
-	public function index($frameId = 0, $lang = '') {
+	public function index($frameId = 0) {
 		//取得
-		$online_frame_setting = $this->OnlineFrameSetting->getOnlineFrameSetting();
+		$onlineFrameSetting = $this->OnlineFrameSetting->getOnlineFrameSetting();
 
 		//データをviewにセット
-		$this->set('online_frame_setting', $online_frame_setting);
-//CakeLog::debug(print_r($online_frame_setting, true));
+		$this->set('onlineFrameSetting', $onlineFrameSetting);
 
 		return $this->render('OnlineStatuses/index');
 	}
@@ -83,12 +83,6 @@ class OnlineStatusesController extends OnlineStatusesAppController {
 		}
 
 		return $this->render('OnlineStatuses/manage', false);
-	}
-
-	public function afterFilter() {
-
-//CakeLog::debug(print_r("----afterFilter---------", true));
-//CakeLog::debug(print_r($this->viewVars['online_frame_setting'], true));
 	}
 
 }

@@ -54,8 +54,6 @@
 		?>
 	</div>
 </form>
-	<!-- debug -->
-	<pre>{{edit|json}}</pre>
 </div>
 </div>
 

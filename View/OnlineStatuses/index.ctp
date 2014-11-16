@@ -3,7 +3,7 @@
 <div id="nc-online-statuses-container-<?php echo (int)$frameId; ?>"
 	 ng-controller="OnlineStatuses"
 	 ng-init="initialize(<?php echo (int)$frameId; ?>,
-	 							<?php echo h(json_encode($online_frame_setting)); ?>)">
+	 							<?php echo h(json_encode($onlineFrameSetting)); ?>)">
 
 	<?php if (Page::isSetting()) : ?>
 		<p class="text-right">
