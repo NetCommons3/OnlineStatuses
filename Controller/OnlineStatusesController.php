@@ -1,12 +1,19 @@
 <?php
+/**
+ * OnlineStatuses Controller
+ *
+ * @author Mitsuru Mutaguchi <mutaguchi@opensource-workshop.jp>
+ * @link http://www.netcommons.org NetCommons Project
+ * @license http://www.netcommons.org/license.txt NetCommons License
+ */
+
 App::uses('OnlineStatusesAppController', 'OnlineStatuses.Controller');
 
 /**
  * OnlineStatuses Controller
  *
  * @author Mitsuru Mutaguchi <mutaguchi@opensource-workshop.jp>
- * @link     http://www.netcommons.org NetCommons Project
- * @license  http://www.netcommons.org/license.txt NetCommons License
+ * @package app.Plugin.OnlineStatuses.Controller
  */
 class OnlineStatusesController extends OnlineStatusesAppController {
 

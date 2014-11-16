@@ -1,4 +1,18 @@
 <?php
+/**
+ * OnlineStatuses Migration
+ *
+ * @author Mitsuru Mutaguchi <mutaguchi@opensource-workshop.jp>
+ * @link http://www.netcommons.org NetCommons Project
+ * @license http://www.netcommons.org/license.txt NetCommons License
+ */
+
+/**
+ * OnlineStatuses Migration
+ *
+ * @author Mitsuru Mutaguchi <mutaguchi@opensource-workshop.jp>
+ * @package app.Plugin.OnlineStatuses.Config.Migration
+ */
 class OnlineStatuses extends CakeMigration {
 
 /**

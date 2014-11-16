@@ -1,18 +1,19 @@
 <?php
 /**
- * OnlineFrameSetting
+ * OnlineFrameSetting Model
  *
  * @author Mitsuru Mutaguchi <mutaguchi@opensource-workshop.jp>
- * @link     http://www.netcommons.org NetCommons Project
- * @license  http://www.netcommons.org/license.txt NetCommons License
+ * @link http://www.netcommons.org NetCommons Project
+ * @license http://www.netcommons.org/license.txt NetCommons License
  */
+
 App::uses('AppModel', 'Model');
 
 /**
  * OnlineFrameSetting Model
  *
  * @author Mitsuru Mutaguchi <mutaguchi@opensource-workshop.jp>
- * @package NetCommons\OnlineStatuses\Model
+ * @package app.Plugin.OnlineStatuses.Model
  */
 class OnlineFrameSetting extends AppModel {
 

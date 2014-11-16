@@ -1,25 +1,33 @@
 <?php
 /**
- * Schema file
+ * OnlineStatusesSchema CakeSchema
  *
- * @author Noriko Arai <arai@nii.ac.jp>
  * @author Mitsuru Mutaguchi <mutaguchi@opensource-workshop.jp>
  * @link http://www.netcommons.org NetCommons Project
  * @license http://www.netcommons.org/license.txt NetCommons License
- * @copyright Copyright 2014, NetCommons Project
  */
 
 /**
  * OnlineStatusesSchema CakeSchema
  *
  * @author Mitsuru Mutaguchi <mutaguchi@opensource-workshop.jp>
- * @package     app.Plugin.OnlineStatuses.Config.Migration
+ * @package app.Plugin.OnlineStatuses.Config.Migration
  * @SuppressWarnings(PHPMD.LongVariable)
  */
 class AppSchema extends CakeSchema {
 
+/**
+ * Database connection
+ *
+ * @var string
+ */
 	public $connection = 'master';
 
+/**
+ * OnlineStatuses table
+ *
+ * @var array
+ */
 	public $online_frame_settings = array(
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'key' => 'primary', 'comment' => 'ID |  |  | '),
 		'frame_key' => array('type' => 'string', 'null' => false, 'default' => null, 'key' => 'index', 'collate' => 'utf8_general_ci', 'comment' => 'frame key | フレームKey | frames.key | ', 'charset' => 'utf8'),
