@@ -14,6 +14,18 @@ OnlineStatuses for NetCommons3
 
 オンライン状況
 
+## タスク
+
+- [x] vagrant環境構築
+- [x] cakephp実装
+- [x] cakephp セキュリティコンポーネント
+- [x] angraljs実装
+- [x] プラグイン追加手順の実施（githubにプラグインリポジトリ作成、各種サービスの登録）
+- [x] phpmd, phpcs, phpdoc, gjslint
+- [x] githubにソースをpush
+- [ ] phpUnit実装、テスト
+
 ## 課題管理
 
-[issue](https://github.com/NetCommons3/OnlineStatuses/issues)に記述
+[issue](https://github.com/NetCommons3/OnlineStatuses/issues)を参照
+
