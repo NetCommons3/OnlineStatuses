@@ -24,7 +24,7 @@ OnlineStatuses for NetCommons3
 - [x] phpmd, phpcs, phpdoc, gjslint対応
 - [x] githubにpush
 - [ ] 多言語対応
-- [ ] phpUnit実装、テスト
+- [ ] phpUnit実装、テスト、カバレッジ
 
 ## 課題管理
 
