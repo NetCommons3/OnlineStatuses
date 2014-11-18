@@ -18,9 +18,15 @@
 
 	<div id="nc-online-statuses-container-<?php echo (int)$frameId; ?>" class="row">
 		<ul class="nav nav-pills nav-stacked">
-			<li class="col-sm-12" ng-show="online_status.OnlineFrameSetting.display_visitor">オンラインユーザ <span class="badge pull-right">42</span></li>
-			<li class="col-sm-12" ng-show="online_status.OnlineFrameSetting.display_login_user">ログインユーザ <span class="badge pull-right">42</span></li>
-			<li class="col-sm-12" ng-show="online_status.OnlineFrameSetting.display_registration_user">登録ユーザ <span class="badge pull-right">42</span></li>
+			<li class="col-sm-12" ng-show="online_status.OnlineFrameSetting.display_visitor">
+				<?php echo __d('online_statuses', 'Online Users'); ?> <span class="badge pull-right">42</span>
+			</li>
+			<li class="col-sm-12" ng-show="online_status.OnlineFrameSetting.display_login_user">
+				<?php echo __d('online_statuses', 'Login Users'); ?> <span class="badge pull-right">42</span>
+			</li>
+			<li class="col-sm-12" ng-show="online_status.OnlineFrameSetting.display_registration_user">
+				<?php echo __d('online_statuses', 'Total Members'); ?> <span class="badge pull-right">42</span>
+			</li>
 		</ul>
 	</div>
 </div>

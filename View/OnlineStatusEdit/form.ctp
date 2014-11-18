@@ -40,7 +40,7 @@ echo $this->Form->input('OnlineFrameSetting.display_login_user', array(
 			'ng-model' => 'edit.data.OnlineFrameSetting.display_login_user',
 		)
 	);
-//リンク先参照回数を表示する
+//登録ユーザを表示する
 echo $this->Form->input('OnlineFrameSetting.display_registration_user', array(
 			'type' => 'checkbox',
 			'value' => $onlineFrameSetting['OnlineFrameSetting']['display_registration_user'],
