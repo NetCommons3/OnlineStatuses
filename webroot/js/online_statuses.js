@@ -1,5 +1,6 @@
 /**
  * @fileoverview OnlineStatuses Javascript
+ * @author nakajimashouhei@gmail.com (Shohei Nakajima)
  * @author mutaguchi@opensource-workshop.jp (Mitsuru Mutaguchi)
  * @link http://www.netcommons.org NetCommons Project
  * @license http://www.netcommons.org/license.txt NetCommons License
