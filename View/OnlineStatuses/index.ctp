@@ -1,3 +1,13 @@
+<?php
+/**
+ * OnlineStatuses Index Template
+ *
+ * @author Mitsuru Mutaguchi <mutaguchi@opensource-workshop.jp>
+ * @link http://www.netcommons.org NetCommons Project
+ * @license http://www.netcommons.org/license.txt NetCommons License
+ */
+?>
+
 <?php echo $this->Html->script('/online_statuses/js/online_statuses.js'); ?>
 
 <div id="nc-online-statuses-container-<?php echo (int)$frameId; ?>"
