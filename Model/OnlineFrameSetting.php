@@ -2,9 +2,11 @@
 /**
  * OnlineFrameSetting Model
  *
+ * @author Noriko Arai <arai@nii.ac.jp>
  * @author Mitsuru Mutaguchi <mutaguchi@opensource-workshop.jp>
  * @link http://www.netcommons.org NetCommons Project
  * @license http://www.netcommons.org/license.txt NetCommons License
+ * @copyright Copyright 2014, NetCommons Project
  */
 
 App::uses('AppModel', 'Model');
@@ -13,7 +15,7 @@ App::uses('AppModel', 'Model');
  * OnlineFrameSetting Model
  *
  * @author Mitsuru Mutaguchi <mutaguchi@opensource-workshop.jp>
- * @package app.Plugin.OnlineStatuses.Model
+ * @package NetCommons\OnlineStatuses\Model
  */
 class OnlineFrameSetting extends AppModel {
 
@@ -130,9 +132,9 @@ class OnlineFrameSetting extends AppModel {
 			$onlineFrameSetting['OnlineFrameSetting']['created_user'] = CakeSession::read('Auth.User.id');
 
 			// チェックボックスseve暫定対応 SuppressWarnings適用箇所
-			$onlineFrameSetting['OnlineFrameSetting']['display_visitor'] = $onlineFrameSetting['OnlineFrameSetting']['display_visitor'] == "false" ? 0 : 1;
-			$onlineFrameSetting['OnlineFrameSetting']['display_login_user'] = $onlineFrameSetting['OnlineFrameSetting']['display_login_user'] == "false" ? 0 : 1;
-			$onlineFrameSetting['OnlineFrameSetting']['display_registration_user'] = $onlineFrameSetting['OnlineFrameSetting']['display_registration_user'] == "false" ? 0 : 1;
+			$onlineFrameSetting['OnlineFrameSetting']['display_visitor'] = $onlineFrameSetting['OnlineFrameSetting']['display_visitor'] == 'false' ? 0 : 1;
+			$onlineFrameSetting['OnlineFrameSetting']['display_login_user'] = $onlineFrameSetting['OnlineFrameSetting']['display_login_user'] == 'false' ? 0 : 1;
+			$onlineFrameSetting['OnlineFrameSetting']['display_registration_user'] = $onlineFrameSetting['OnlineFrameSetting']['display_registration_user'] == 'false' ? 0 : 1;
 
 			$onlineFrameSetting = $this->save($onlineFrameSetting);
 			if (! $onlineFrameSetting) {

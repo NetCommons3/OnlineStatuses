@@ -1,5 +1,6 @@
 /**
  * @fileoverview OnlineStatuses Javascript
+ * @author arai@nii.ac.jp (Noriko Arai)
  * @author nakajimashouhei@gmail.com (Shohei Nakajima)
  * @author mutaguchi@opensource-workshop.jp (Mitsuru Mutaguchi)
  * @link http://www.netcommons.org NetCommons Project
