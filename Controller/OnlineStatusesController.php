@@ -88,7 +88,7 @@ class OnlineStatusesController extends OnlineStatusesAppController {
 			return $this->render(false);
 		}
 		//編集権限チェック
-		if (! $this->viewVars['contentEditable']) {
+		if (! $this->viewVars['pageEditable']) {
 			$this->response->statusCode(403);
 			return $this->render(false);
 		}
