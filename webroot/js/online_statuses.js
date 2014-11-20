@@ -68,6 +68,12 @@ NetCommonsApp.controller('OnlineStatuses',
 
     });
 
+/**
+ * OnlineStatuses.edit Javascript
+ *
+ * @param {string} Controller name
+ * @param {function(scope, http, modalStack)} Controller
+ */
 NetCommonsApp.controller('OnlineStatuses.edit',
                          function($scope, $http, $modalStack) {
 
@@ -126,11 +132,6 @@ NetCommonsApp.controller('OnlineStatuses.edit',
       /**
        * dialog save
        *
-       * @param {number} status
-       * - 1: Publish
-       * - 2: Approve
-       * - 3: Draft
-       * - 4: Disapprove
        * @return {void}
        */
       $scope.save = function() {
