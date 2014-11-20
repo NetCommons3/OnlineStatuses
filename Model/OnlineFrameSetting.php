@@ -23,18 +23,62 @@ class OnlineFrameSetting extends AppModel {
  * @var array
  */
 	public $validate = array(
+		'frame_key' => array(
+			'notEmpty' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Invalid request.',
+				'last' => true, // Stop validation after this rule
+				'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+		'display_visitor' => array(
+			'boolean' => array(
+				'rule' => array('boolean'),
+				'message' => 'Invalid request.',
+			),
+		),
+		'display_login_user' => array(
+			'boolean' => array(
+				'rule' => array('boolean'),
+				'message' => 'Invalid request.',
+			),
+		),
+		'display_registration_user' => array(
+			'boolean' => array(
+				'rule' => array('boolean'),
+				'message' => 'Invalid request.',
+			),
+		),
+	);
+
+/**
+ * belongsTo associations
+ *
+ * @var array
+ */
+	public $belongsTo = array(
+		'Frame' => array(
+			'className' => 'Frames.Frame',
+			'foreignKey' => false,
+			'conditions' => array('Frame.key = OnlineFrameSetting.frame_key'),
+			'fields' => '',
+			'order' => ''
+		)
 	);
 
 /**
  * get OnlineFrameSetting
  *
+ * @param int $frameId frames.id
  * @return array
  */
-	public function getOnlineFrameSetting() {
+	public function getOnlineFrameSetting($frameId = 0) {
 		$conditions = array(
+			'Frame.id' => $frameId,
 		);
 
 		$onlineFrameSetting = $this->find('first', array(
+				'fields' => 'OnlineFrameSetting.*',
 				'conditions' => $conditions,
 			)
 		);
@@ -60,14 +104,8 @@ class OnlineFrameSetting extends AppModel {
  * @SuppressWarnings(PHPMD.NPathComplexity)
  */
 	public function saveOnlineFrameSetting($postData) {
-		$models = array(
-			'Frame' => 'Frames.Frame',
-			'Block' => 'Blocks.Block',
-		);
-		foreach ($models as $model => $class) {
-			$this->$model = ClassRegistry::init($class);
-			$this->$model->setDataSource('master');
-		}
+		$this->setDataSource('master');
+		$this->Frame->setDataSource('master');
 
 		//frame関連のセット
 		$frame = $this->Frame->findById($postData['Frame']['id']);
@@ -85,11 +123,10 @@ class OnlineFrameSetting extends AppModel {
 		$dataSource = $this->getDataSource();
 		$dataSource->begin();
 		try {
-			$blockId = $this->__saveBlock($frame);
+			$this->__saveBlock($frame);
 
 			//OnlineFrameSettingsテーブル登録
 			$onlineFrameSetting['OnlineFrameSetting'] = $postData['OnlineFrameSetting'];
-			$onlineFrameSetting['OnlineFrameSetting']['block_id'] = $blockId;
 			$onlineFrameSetting['OnlineFrameSetting']['created_user'] = CakeSession::read('Auth.User.id');
 
 			// チェックボックスseve暫定対応 SuppressWarnings適用箇所

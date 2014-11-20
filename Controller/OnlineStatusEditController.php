@@ -81,7 +81,7 @@ class OnlineStatusEditController extends OnlineStatusesAppController {
 			return $this->render(false);
 		}
 		//取得
-		$onlineFrameSetting = $this->OnlineFrameSetting->getOnlineFrameSetting();
+		$onlineFrameSetting = $this->OnlineFrameSetting->getOnlineFrameSetting($frameId);
 
 		//viewにセット
 		$this->set('onlineFrameSetting', $onlineFrameSetting);
@@ -115,7 +115,7 @@ class OnlineStatusEditController extends OnlineStatusesAppController {
 		}
 
 		//取得
-		$onlineFrameSetting = $this->OnlineFrameSetting->getOnlineFrameSetting();
+		$onlineFrameSetting = $this->OnlineFrameSetting->getOnlineFrameSetting($frameId);
 
 		$result = array(
 			'name' => __d('net_commons', 'Successfully finished.'),

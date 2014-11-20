@@ -68,7 +68,7 @@ class OnlineStatusesController extends OnlineStatusesAppController {
  **/
 	public function index($frameId = 0) {
 		//取得
-		$onlineFrameSetting = $this->OnlineFrameSetting->getOnlineFrameSetting();
+		$onlineFrameSetting = $this->OnlineFrameSetting->getOnlineFrameSetting($frameId);
 
 		//データをviewにセット
 		$this->set('onlineFrameSetting', $onlineFrameSetting);
