@@ -15,7 +15,8 @@ describe('OnlineStatuses Test', function() {
   beforeEach(inject(function($controller) {
     //spec body
     scope = {};
-    var OnlineStatusesController = $controller('OnlineStatuses', { $scope: scope });
+    var OnlineStatusesController =
+        $controller('OnlineStatuses', { $scope: scope });
     expect(OnlineStatusesController).toBeDefined();
   }));
 

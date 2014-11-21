@@ -67,6 +67,7 @@ NetCommonsApp.controller('OnlineStatuses',
 
     });
 
+
 /**
  * OnlineStatuses.edit Javascript
  *

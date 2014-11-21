@@ -26,7 +26,8 @@ describe('OnlineStatuses.edit Test', function() {
       }
     };
     scope.frameId = frameId;
-    var OnlineStatusesEditController = $controller('OnlineStatuses.edit', { $scope: scope });
+    var OnlineStatusesEditController =
+        $controller('OnlineStatuses.edit', { $scope: scope });
     expect(OnlineStatusesEditController).toBeDefined();
   }));
 
@@ -59,10 +60,14 @@ describe('OnlineStatuses.edit Test', function() {
 
     scope.initialize();
     // 同一値チェック
-    expect(scope.edit.data.OnlineFrameSetting.id).toBe(scope.online_status.OnlineFrameSetting.id);
-    expect(scope.edit.data.OnlineFrameSetting.display_visitor).toBe(scope.online_status.OnlineFrameSetting.display_visitor);
-    expect(scope.edit.data.OnlineFrameSetting.display_login_user).toBe(scope.online_status.OnlineFrameSetting.display_login_user);
-    expect(scope.edit.data.OnlineFrameSetting.display_registration_user).toBe(scope.online_status.OnlineFrameSetting.display_registration_user);
+    expect(scope.edit.data.OnlineFrameSetting.id)
+      .toBe(scope.online_status.OnlineFrameSetting.id);
+    expect(scope.edit.data.OnlineFrameSetting.display_visitor)
+      .toBe(scope.online_status.OnlineFrameSetting.display_visitor);
+    expect(scope.edit.data.OnlineFrameSetting.display_login_user)
+      .toBe(scope.online_status.OnlineFrameSetting.display_login_user);
+    expect(scope.edit.data.OnlineFrameSetting.display_registration_user)
+      .toBe(scope.online_status.OnlineFrameSetting.display_registration_user);
     expect(scope.edit.data.Frame.id).toBe(scope.frameId);
     expect(scope.edit.data._Token.key).toBe('');
     expect(scope.edit.data._Token.fields).toBe('');
