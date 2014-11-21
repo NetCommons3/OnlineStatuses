@@ -138,7 +138,7 @@ class OnlineStatusesControllerTest extends ControllerTestCase {
  */
 	public function testBeforeFilterByNoSetFrameId() {
 		$this->setExpectedException('ForbiddenException');
-		$this->testAction('/OnlineStatuses/OnlineStatuses/index', array('method' => 'get'));
+		$this->testAction('/online_statuses/online_statuses/index', array('method' => 'get'));
 
 		$this->assertEmpty(trim($this->view));
 	}
@@ -149,7 +149,7 @@ class OnlineStatusesControllerTest extends ControllerTestCase {
  * @return void
  */
 	public function testIndexByAllNoDisplay() {
-		$this->testAction('/OnlineStatuses/OnlineStatuses/index/1', array('method' => 'get'));
+		$this->testAction('/online_statuses/online_statuses/index/1', array('method' => 'get'));
 
 		// jsで表示非表示を制御しているため、設定値は全部非表示だが、HTMLには全部表示されている。
 		$this->assertTextContains('オンラインユーザー', $this->view);
@@ -163,7 +163,7 @@ class OnlineStatusesControllerTest extends ControllerTestCase {
  * @return void
  */
 	public function testIndexByAllDisplay() {
-		$this->testAction('/OnlineStatuses/OnlineStatuses/index/2', array('method' => 'get'));
+		$this->testAction('/online_statuses/online_statuses/index/2', array('method' => 'get'));
 
 		$this->assertTextContains('オンラインユーザー', $this->view);
 		$this->assertTextContains('ログインユーザー', $this->view);
@@ -176,7 +176,7 @@ class OnlineStatusesControllerTest extends ControllerTestCase {
  * @return void
  */
 	public function testManage() {
-		$this->testAction('/OnlineStatuses/OnlineStatuses/manage/1', array('method' => 'get'));
+		$this->testAction('/online_statuses/online_status_edit/manage/1', array('method' => 'get'));
 
 		$this->assertTextContains('表示方法変更', $this->view);
 	}

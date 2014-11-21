@@ -137,7 +137,7 @@ class OnlineStatusControllerEditTest extends ControllerTestCase {
  * @return void
  */
 	public function testView() {
-		$this->testAction('/OnlineStatuses/OnlineStatusEdit/view/1', array('method' => 'get'));
+		$this->testAction('/online_statuses/online_status_edit/view/1', array('method' => 'get'));
 
 		$expected = 'OnlineStatuses/online_status_edit';
 		$this->assertTextContains($expected, $this->view);

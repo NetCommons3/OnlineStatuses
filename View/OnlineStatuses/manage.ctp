@@ -33,7 +33,7 @@
 		<div id="nc-online-statuses-display-style-<?php echo $frameId; ?>"
 				class="tab-pane active">
 
-			<?php echo $this->requestAction('/OnlineStatuses/OnlineStatusEdit/view/' . $frameId, array('return')); ?>
+			<?php echo $this->requestAction('/online_statuses/online_status_edit/view/' . $frameId, array('return')); ?>
 		</div>
 	</div>
 </div>
