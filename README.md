@@ -4,7 +4,7 @@ OnlineStatuses
 OnlineStatuses for NetCommons3
 
 [![Build Status](https://travis-ci.org/NetCommons3/OnlineStatuses.svg?branch=master)](https://travis-ci.org/NetCommons3/OnlineStatuses)
-[![Coverage Status](https://coveralls.io/repos/NetCommons3/OnlineStatuses/badge.png?branch=master)](https://coveralls.io/r/NetCommons3/OnlineStatuses?branch=master)
+[![Coverage Status](https://img.shields.io/coveralls/NetCommons3/OnlineStatuses.svg)](https://coveralls.io/r/NetCommons3/OnlineStatuses?branch=master)
 
 | dependencies | status |
 | ------------ | ------ |
