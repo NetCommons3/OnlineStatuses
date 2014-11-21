@@ -8,7 +8,7 @@ OnlineStatuses for NetCommons3
 
 | dependencies | status |
 | ------------ | ------ |
-| composer.json | [![Dependency Status](https://www.versioneye.com/user/projects/5465cd3a4de5ef4825000053 /badge.png)](https://www.versioneye.com/user/projects/5465cd3a4de5ef4825000053) |
+| composer.json | [![Dependency Status](https://www.versioneye.com/user/projects/5465cd3a4de5ef4825000053/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5465cd3a4de5ef4825000053) |
 
 ## 日本語名
 
