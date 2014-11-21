@@ -31,7 +31,7 @@
     "authors": [
         {
             "name": "NetCommons Community",
-            "homepage": "https://github.com/NetCommons3/Announcements/graphs/contributors"
+            "homepage": "https://github.com/NetCommons3/OnlineStatuses/graphs/contributors"
         }
     ],
     "type":        "cakephp-plugin",
